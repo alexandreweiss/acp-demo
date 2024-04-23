@@ -57,7 +57,7 @@ Diagram of the overall architecture :
   - Browse Guacamole IP using https://w.x.y.z/app
   - Look at NGINX announcement
 
-## Demo overlapping IP accross spoke. Kubernetes "cookie-cutter" deployment usecase
+## Demo overlapping IP across spoke. Kubernetes "cookie-cutter" deployment use case
 - Two spokes deployed in first region using same CIDR block.
 - Each advertise a unique ip 172.20.20.22/32 and 172.20.20.23/32
 - Test:
@@ -72,7 +72,7 @@ Diagram of the overall architecture :
   - df -h, 
   - ls /mnt/azrweswbsa
 
-## Demonstrate Edge bootstrap via GUI
+## Demonstrate Aviatrix Edge deployment via Copilot GUI
 - Use serial under the box to create edge in Copilot,
 - Plug the box to internet using port0 and wait for the bootstrap to occur,
 - Deploy an Aviatrix Edge on top of the box,
