@@ -51,7 +51,7 @@ Diagram of the overall architecture :
 
 # Scenario in this demo
 
-## Test inbound connectivity from to internet
+## Test inbound connectivity from internet
 - NGINX is configured as a reverse proxy in first region to NGINX in second region.
 - Test:
   - Browse Guacamole IP using https://w.x.y.z/app
@@ -61,13 +61,19 @@ Diagram of the overall architecture :
 - Two spokes deployed in first region using same CIDR block.
 - Each advertise a unique ip 172.20.20.22/32 and 172.20.20.23/32
 - Test:
-  - connect via Guacamole to we-SwbPrivate-nat-a and "ip a"
-  - connect via Guacamole to we-SwbPrivate-nat-b and "ip a"
+  - connect via Guacamole to we-Enovia-nat-a and "ip a"
+  - connect via Guacamole to we-Enovia-nat-b and "ip a"
 
 ## Private Endpoint connectivity test across Aviatrix Data Plane
 - Private endpoint deployed in first region, second spoke
 - Connected using Linux SBM Client in first region, first spoke
 - Test: 
-  - connect via Guacamole to we-SwbPrivate
+  - connect via Guacamole to we-Enovia
   - df -h, 
   - ls /mnt/azrweswbsa
+
+## Demonstrate Edge bootstrap via GUI
+- Use serial under the box to create edge in Copilot,
+- Plug the box to internet using port0 and wait for the bootstrap to occur,
+- Deploy an Aviatrix Edge on top of the box,
+- Attach it to transit.
