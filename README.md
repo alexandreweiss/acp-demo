@@ -14,11 +14,12 @@ For that demo, we need :
   - Standard peering between those three regions over Azure and AWS backbone.
 
 - Aviatrix spoke deployed in each of the above region :
+  - One island vnet not connected to transit in the first region,
   - Two vnets, each with an Aviatrix spoke in first region,
   - Two vnets with overlapping CIDRs, each with an Aviatrix spoke in first region,
   - Two vnets, each with an Aviatrix spoke in second region,
   - Two vnets, each with an Aviatrix spoke in third region,
-  - Each spoke is peered with its regional transit.
+  - Each spoke is peered with its regional transit (except island vnet).
   - Each spoke contains a test VM instance accessible via Guacamole jumpbox
   - Guacamole server is deployed in the first spoke of the first region. (Search for the URL to connect in the output after terraform deployment)
   - Guacamole server is also used as a reverse proxy (NGINX) to connect to first application in opposite region across Aviatrix transit.
@@ -71,6 +72,10 @@ Diagram of the overall architecture :
   - connect via Guacamole to we-Enovia
   - df -h, 
   - ls /mnt/azrweswbsa
+
+## Internet egress filtering for island virtual networks
+- Browse the Azure Container Instance to check at internet connectivity
+- Play with Distributed Cloud Firewall
 
 ## Demonstrate Aviatrix Edge deployment via Copilot GUI
 - Use serial under the box to create edge in Copilot,

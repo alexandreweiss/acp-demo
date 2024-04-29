@@ -83,6 +83,11 @@ variable "azr_r2_spoke_app2_cidr" {
   default     = "10.22.0.0/24"
 }
 
+variable "azr_r1_island_cidr" {
+  description = "CIDR block allocated to island vnet in region r1"
+  default     = "10.14.0.0/24"
+}
+
 variable "aws_r1_location" {
   default     = "eu-central-1"
   description = "region to deploy resources"
@@ -143,3 +148,7 @@ variable "controller_ip" {
   type        = string
 }
 
+variable "customer_website" {
+  description = "FQDN of customer website"
+  default     = "www.aviatrix.com"
+}

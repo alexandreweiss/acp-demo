@@ -42,6 +42,10 @@ output "guacamole_fqdn" {
   value = nonsensitive("https://${module.azr_r1_guacamole_vm.public_ip}/#/index.html?username=guacadmin&password=${var.vm_password}")
 }
 
+output "island_vnet_connectivity" {
+  value = "http://${module.azr_r1_spoke_island.spoke_gateway.eip}"
+}
+
 # output "private_key" {
 #   description = "Private key value"
 #   value       = nonsensitive(module.key_pair_r1.private_key_pem)
