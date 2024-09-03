@@ -43,7 +43,7 @@ output "guacamole_fqdn" {
 }
 
 output "island_vnet_connectivity" {
-  value = "http://${module.azr_r1_spoke_island.spoke_gateway.eip}"
+  value = nonsensitive("http://${module.azr_r1_spoke_island.spoke_gateway.eip}")
 }
 
 # output "private_key" {

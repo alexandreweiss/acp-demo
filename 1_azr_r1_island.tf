@@ -63,7 +63,7 @@ resource "azurerm_container_group" "island_container_group" {
 
   container {
     name   = "gatus"
-    image  = "docker.io/aweiss4876/gatus-aviatrix:latest"
+    image  = "aviatrixacr.azurecr.io/aviatrix/gatus-aviatrix"
     cpu    = "1"
     memory = "1.5"
     ports {

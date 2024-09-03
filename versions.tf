@@ -8,12 +8,12 @@ terraform {
       version = "~>3.0"
     }
   }
-  cloud {
-    organization = "ananableu"
-    workspaces {
-      name = "acp-demo"
-    }
-  }
+  # cloud {
+  #   organization = "ananableu"
+  #   workspaces {
+  #     name = "bdl-demo"
+  #   }
+  # }
 }
 
 provider "aviatrix" {
